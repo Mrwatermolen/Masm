@@ -84,7 +84,7 @@ $ dosbox -c "mount c: /home/username/Masm"
 
 ### VSCODE为dosbox配置task任务
 
-在.vsocode下创建tasks.json
+在`当前文件目录/.vsocode`下创建tasks.json
 输入
 
 ```json
@@ -107,8 +107,6 @@ $ dosbox -c "mount c: /home/username/Masm"
                 "LINK ${fileBasenameNoExtension}.obj",
                 "-c",
                 "DEBUG ${fileBasenameNoExtension}.exe",
-                "-c",
-                "exit"
             ],
             "problemMatcher": [],
             "group": {
@@ -120,4 +118,10 @@ $ dosbox -c "mount c: /home/username/Masm"
 }
 ```
 
-shift+ctrl+B
+保存，在写asm文件时保存后按　**shift+ctrl+B**　可自动进入调试(记得一路回车)
+
+#### 退出调试模式
+
+在dos下,`q`回车
+
+Alt+Enter可以切换Dosbox全屏或窗口显示

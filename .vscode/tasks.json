@@ -17,9 +17,9 @@
                 "-c",
                 "LINK ${fileBasenameNoExtension}.obj",
                 "-c",
-                "DEBUG ${fileBasenameNoExtension}.exe",
-                "-c",
-                "exit"
+                "DEBUG ${fileBasenameNoExtension}.exe"
+                //"-c",
+                //"exit"
             ],
             "problemMatcher": [],
             "group": {
