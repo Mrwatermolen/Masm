@@ -1,0 +1,33 @@
+STACK	SEGMENT	PARA	STACK	'STACK'
+		DB	200	DUP(?)
+STACK	ENDS
+DATA	SEGMENT
+BUFFER  DB  0A5H, 43H, 11H, 0C6H, 71H;正确的排列为C6H A5H 71H 43H 11H
+CONT	DB	4
+DATA	ENDS
+CODE	SEGMENT
+		ASSUME	CS:CODE, DS:DATA, SS:STACK, ES:DATA
+SORT:   MOV AX, DATA;采用冒泡排序
+		MOV DS, AX
+		MOV ES, AX
+        LEA DI, BUFFER
+        MOV BL, CONT
+        MOV AX, 0
+        MOV DX, 0
+NEXT0:  MOV SI, DI
+        MOV CL, BL
+NEXT2:  MOV AL, [SI]
+        INC SI
+        CMP AL, [SI]
+        JNC NEXT3;如果AL>[SI]则继续开始内层循环　反之交互[SI]和[SI-1]的位置
+        MOV DX, [SI]
+        MOV [SI-1], DL
+        MOV [SI],   AL
+NEXT3:  DEC CL
+        JNZ NEXT2;内层循环
+        DEC BL
+        JNZ NEXT0;外层循环
+		MOV AH, 4CH
+		INT 21H
+CODE	ENDS
+		END	SORT
