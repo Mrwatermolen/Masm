@@ -124,4 +124,4 @@ $ dosbox -c "mount c: /home/username/Masm"
 
 在dos下,`q`回车
 
-Alt+Enter可以切换Dosbox全屏或窗口显示
+Alt+Enter可以切换Dosbox全屏或窗口显

@@ -1,6 +1,6 @@
 ---
 title: 实验报告
-output: word_document
+output: pdf_document
 ---
 
 ## 两个非压缩的BCD数的加法
